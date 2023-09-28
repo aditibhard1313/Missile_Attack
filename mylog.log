@@ -1,0 +1,451 @@
+28-Sep-23 19:07:13 - $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  STARTING THE GAME  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+28-Sep-23 19:07:13 - Soldier 1,Position-(2,8),speed:0,status:1
+28-Sep-23 19:07:13 - Soldier 2,Position-(9,3),speed:1,status:1
+28-Sep-23 19:07:13 - Soldier 3,Position-(2,6),speed:4,status:1
+28-Sep-23 19:07:13 - Soldier 4,Position-(1,0),speed:0,status:1
+28-Sep-23 19:07:13 - Soldier 5,Position-(2,7),speed:0,status:1
+28-Sep-23 19:07:13 - Soldier 6,Position-(0,8),speed:4,status:1
+28-Sep-23 19:07:13 - Soldier 7,Position-(8,5),speed:3,status:1
+28-Sep-23 19:07:13 - Soldier 8,Position-(2,3),speed:0,status:1
+28-Sep-23 19:07:13 - Soldier 9,Position-(6,7),speed:0,status:1
+28-Sep-23 19:07:13 - Soldier 10,Position-(5,6),speed:3,status:1
+28-Sep-23 19:07:13 - Commander is soldier : 9
+28-Sep-23 19:07:13 - **************Missile launching at time 0*****************
+28-Sep-23 19:07:14 - missile position is : 6,7 missile radius : 2
+28-Sep-23 19:07:17 - Soldier10got saved and moved to new position:(2,4)
+28-Sep-23 19:07:17 - Commander died so Newly elected commander is soldier5
+28-Sep-23 19:07:18 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:18 - Soldier 1:is alive
+28-Sep-23 19:07:18 - Soldier 2:is alive
+28-Sep-23 19:07:18 - Soldier 3:is alive
+28-Sep-23 19:07:18 - Soldier 4:is alive
+28-Sep-23 19:07:18 - Soldier 5:is alive
+28-Sep-23 19:07:18 - Soldier 6:is alive
+28-Sep-23 19:07:18 - Soldier 7:is alive
+28-Sep-23 19:07:18 - Soldier 8:is alive
+28-Sep-23 19:07:18 - Soldier 9:is dead
+28-Sep-23 19:07:18 - Soldier 10:is alive
+28-Sep-23 19:07:18 - Number of alive soldiers are : 9
+28-Sep-23 19:07:18 - **************Missile launching at time 10*****************
+28-Sep-23 19:07:18 - missile position is : 0,6 missile radius : 3
+28-Sep-23 19:07:20 - Soldier6got saved and moved to new position:(0,9)
+28-Sep-23 19:07:20 - Soldier10got saved and moved to new position:(0,1)
+28-Sep-23 19:07:20 - Commander died so Newly elected commander is soldier10
+28-Sep-23 19:07:21 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:21 - Soldier 1:is dead
+28-Sep-23 19:07:21 - Soldier 2:is alive
+28-Sep-23 19:07:21 - Soldier 3:is alive
+28-Sep-23 19:07:21 - Soldier 4:is alive
+28-Sep-23 19:07:21 - Soldier 5:is dead
+28-Sep-23 19:07:21 - Soldier 6:is alive
+28-Sep-23 19:07:21 - Soldier 7:is alive
+28-Sep-23 19:07:21 - Soldier 8:is alive
+28-Sep-23 19:07:21 - Soldier 10:is alive
+28-Sep-23 19:07:21 - Number of alive soldiers are : 7
+28-Sep-23 19:07:21 - **************Missile launching at time 20*****************
+28-Sep-23 19:07:22 - missile position is : 0,2 missile radius : 2
+28-Sep-23 19:07:23 - Soldier10got saved and moved to new position:(0,0)
+28-Sep-23 19:07:25 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:25 - Soldier 2:is alive
+28-Sep-23 19:07:25 - Soldier 3:is alive
+28-Sep-23 19:07:25 - Soldier 4:is alive
+28-Sep-23 19:07:25 - Soldier 6:is alive
+28-Sep-23 19:07:25 - Soldier 7:is alive
+28-Sep-23 19:07:25 - Soldier 8:is alive
+28-Sep-23 19:07:25 - Soldier 10:is alive
+28-Sep-23 19:07:25 - Number of alive soldiers are : 7
+28-Sep-23 19:07:25 - **************Missile launching at time 30*****************
+28-Sep-23 19:07:25 - missile position is : 8,6 missile radius : 1
+28-Sep-23 19:07:27 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:27 - Soldier 2:is alive
+28-Sep-23 19:07:27 - Soldier 3:is alive
+28-Sep-23 19:07:27 - Soldier 4:is alive
+28-Sep-23 19:07:27 - Soldier 6:is alive
+28-Sep-23 19:07:27 - Soldier 7:is alive
+28-Sep-23 19:07:27 - Soldier 8:is alive
+28-Sep-23 19:07:27 - Soldier 10:is alive
+28-Sep-23 19:07:27 - Number of alive soldiers are : 7
+28-Sep-23 19:07:27 - **************Missile launching at time 40*****************
+28-Sep-23 19:07:27 - missile position is : 0,9 missile radius : 4
+28-Sep-23 19:07:30 - Soldier3got saved and moved to new position:(0,2)
+28-Sep-23 19:07:30 - Soldier6got saved and moved to new position:(0,5)
+28-Sep-23 19:07:31 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:31 - Soldier 2:is alive
+28-Sep-23 19:07:31 - Soldier 3:is alive
+28-Sep-23 19:07:31 - Soldier 4:is alive
+28-Sep-23 19:07:31 - Soldier 6:is alive
+28-Sep-23 19:07:31 - Soldier 7:is alive
+28-Sep-23 19:07:31 - Soldier 8:is alive
+28-Sep-23 19:07:31 - Soldier 10:is alive
+28-Sep-23 19:07:31 - Number of alive soldiers are : 7
+28-Sep-23 19:07:31 - **************Missile launching at time 50*****************
+28-Sep-23 19:07:31 - missile position is : 1,3 missile radius : 1
+28-Sep-23 19:07:34 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:34 - Soldier 2:is alive
+28-Sep-23 19:07:34 - Soldier 3:is alive
+28-Sep-23 19:07:34 - Soldier 4:is alive
+28-Sep-23 19:07:34 - Soldier 6:is alive
+28-Sep-23 19:07:34 - Soldier 7:is alive
+28-Sep-23 19:07:34 - Soldier 8:is alive
+28-Sep-23 19:07:34 - Soldier 10:is alive
+28-Sep-23 19:07:34 - Number of alive soldiers are : 7
+28-Sep-23 19:07:34 - **************Missile launching at time 60*****************
+28-Sep-23 19:07:34 - missile position is : 3,3 missile radius : 3
+28-Sep-23 19:07:38 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:38 - Soldier 2:is alive
+28-Sep-23 19:07:38 - Soldier 3:is alive
+28-Sep-23 19:07:38 - Soldier 4:is alive
+28-Sep-23 19:07:38 - Soldier 6:is alive
+28-Sep-23 19:07:38 - Soldier 7:is alive
+28-Sep-23 19:07:38 - Soldier 8:is dead
+28-Sep-23 19:07:38 - Soldier 10:is alive
+28-Sep-23 19:07:38 - Number of alive soldiers are : 6
+28-Sep-23 19:07:38 - **************Missile launching at time 70*****************
+28-Sep-23 19:07:38 - missile position is : 1,2 missile radius : 3
+28-Sep-23 19:07:39 - Soldier3got saved and moved to new position:(0,6)
+28-Sep-23 19:07:39 - Commander died so Newly elected commander is soldier7
+28-Sep-23 19:07:41 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:41 - Soldier 2:is alive
+28-Sep-23 19:07:41 - Soldier 3:is alive
+28-Sep-23 19:07:41 - Soldier 4:is dead
+28-Sep-23 19:07:41 - Soldier 6:is alive
+28-Sep-23 19:07:41 - Soldier 7:is alive
+28-Sep-23 19:07:41 - Soldier 10:is dead
+28-Sep-23 19:07:41 - Number of alive soldiers are : 4
+28-Sep-23 19:07:41 - **************Missile launching at time 80*****************
+28-Sep-23 19:07:41 - missile position is : 8,1 missile radius : 2
+28-Sep-23 19:07:44 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:44 - Soldier 2:is alive
+28-Sep-23 19:07:44 - Soldier 3:is alive
+28-Sep-23 19:07:44 - Soldier 6:is alive
+28-Sep-23 19:07:44 - Soldier 7:is alive
+28-Sep-23 19:07:44 - Number of alive soldiers are : 4
+28-Sep-23 19:07:44 - **************Missile launching at time 90*****************
+28-Sep-23 19:07:44 - missile position is : 4,4 missile radius : 4
+28-Sep-23 19:07:47 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:47 - Soldier 2:is alive
+28-Sep-23 19:07:47 - Soldier 3:is alive
+28-Sep-23 19:07:47 - Soldier 6:is alive
+28-Sep-23 19:07:47 - Soldier 7:is alive
+28-Sep-23 19:07:47 - Number of alive soldiers are : 4
+28-Sep-23 19:07:47 - **************Missile launching at time 100*****************
+28-Sep-23 19:07:47 - missile position is : 4,5 missile radius : 4
+28-Sep-23 19:07:50 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:07:50 - Soldier 2:is alive
+28-Sep-23 19:07:50 - Soldier 3:is alive
+28-Sep-23 19:07:50 - Soldier 6:is alive
+28-Sep-23 19:07:50 - Soldier 7:is alive
+28-Sep-23 19:07:50 - Number of alive soldiers are : 4
+28-Sep-23 19:07:50 - ###################  War lost  ##################
+28-Sep-23 19:09:26 - $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  STARTING THE GAME  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+28-Sep-23 19:09:26 - Soldier 1,Position-(4,1),speed:2,status:1
+28-Sep-23 19:09:26 - Soldier 2,Position-(5,4),speed:1,status:1
+28-Sep-23 19:09:26 - Soldier 3,Position-(3,12),speed:2,status:1
+28-Sep-23 19:09:26 - Soldier 4,Position-(14,3),speed:4,status:1
+28-Sep-23 19:09:26 - Soldier 5,Position-(9,3),speed:0,status:1
+28-Sep-23 19:09:26 - Soldier 6,Position-(12,0),speed:0,status:1
+28-Sep-23 19:09:26 - Soldier 7,Position-(7,9),speed:4,status:1
+28-Sep-23 19:09:26 - Soldier 8,Position-(3,0),speed:2,status:1
+28-Sep-23 19:09:26 - Soldier 9,Position-(12,9),speed:4,status:1
+28-Sep-23 19:09:26 - Soldier 10,Position-(11,9),speed:1,status:1
+28-Sep-23 19:09:26 - Soldier 11,Position-(1,5),speed:0,status:1
+28-Sep-23 19:09:26 - Soldier 12,Position-(6,10),speed:2,status:1
+28-Sep-23 19:09:26 - Soldier 13,Position-(9,13),speed:0,status:1
+28-Sep-23 19:09:26 - Commander is soldier : 4
+28-Sep-23 19:09:26 - **************Missile launching at time 0*****************
+28-Sep-23 19:09:33 - missile position is : 9,9 missile radius : 2
+28-Sep-23 19:09:38 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:09:38 - Soldier 1:is alive
+28-Sep-23 19:09:38 - Soldier 2:is alive
+28-Sep-23 19:09:38 - Soldier 3:is alive
+28-Sep-23 19:09:38 - Soldier 4:is alive
+28-Sep-23 19:09:38 - Soldier 5:is alive
+28-Sep-23 19:09:38 - Soldier 6:is alive
+28-Sep-23 19:09:38 - Soldier 7:is alive
+28-Sep-23 19:09:38 - Soldier 8:is alive
+28-Sep-23 19:09:38 - Soldier 9:is alive
+28-Sep-23 19:09:38 - Soldier 10:is alive
+28-Sep-23 19:09:38 - Soldier 11:is alive
+28-Sep-23 19:09:38 - Soldier 12:is alive
+28-Sep-23 19:09:38 - Soldier 13:is alive
+28-Sep-23 19:09:38 - Number of alive soldiers are : 13
+28-Sep-23 19:09:38 - **************Missile launching at time 10*****************
+28-Sep-23 19:09:38 - missile position is : 4,9 missile radius : 2
+28-Sep-23 19:09:42 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:09:42 - Soldier 1:is alive
+28-Sep-23 19:09:42 - Soldier 2:is alive
+28-Sep-23 19:09:42 - Soldier 3:is alive
+28-Sep-23 19:09:42 - Soldier 4:is alive
+28-Sep-23 19:09:42 - Soldier 5:is alive
+28-Sep-23 19:09:42 - Soldier 6:is alive
+28-Sep-23 19:09:42 - Soldier 7:is alive
+28-Sep-23 19:09:42 - Soldier 8:is alive
+28-Sep-23 19:09:42 - Soldier 9:is alive
+28-Sep-23 19:09:42 - Soldier 10:is alive
+28-Sep-23 19:09:42 - Soldier 11:is alive
+28-Sep-23 19:09:42 - Soldier 12:is alive
+28-Sep-23 19:09:42 - Soldier 13:is alive
+28-Sep-23 19:09:42 - Number of alive soldiers are : 13
+28-Sep-23 19:09:42 - **************Missile launching at time 20*****************
+28-Sep-23 19:09:42 - missile position is : 2,0 missile radius : 2
+28-Sep-23 19:09:44 - Soldier8got saved and moved to new position:(1,2)
+28-Sep-23 19:09:46 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:09:46 - Soldier 1:is alive
+28-Sep-23 19:09:46 - Soldier 2:is alive
+28-Sep-23 19:09:46 - Soldier 3:is alive
+28-Sep-23 19:09:46 - Soldier 4:is alive
+28-Sep-23 19:09:46 - Soldier 5:is alive
+28-Sep-23 19:09:46 - Soldier 6:is alive
+28-Sep-23 19:09:46 - Soldier 7:is alive
+28-Sep-23 19:09:46 - Soldier 8:is alive
+28-Sep-23 19:09:46 - Soldier 9:is alive
+28-Sep-23 19:09:46 - Soldier 10:is alive
+28-Sep-23 19:09:46 - Soldier 11:is alive
+28-Sep-23 19:09:46 - Soldier 12:is alive
+28-Sep-23 19:09:46 - Soldier 13:is alive
+28-Sep-23 19:09:46 - Number of alive soldiers are : 13
+28-Sep-23 19:09:46 - **************Missile launching at time 30*****************
+28-Sep-23 19:09:46 - missile position is : 13,3 missile radius : 4
+28-Sep-23 19:09:48 - Soldier4got saved and moved to new position:(10,7)
+28-Sep-23 19:09:49 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:09:49 - Soldier 1:is alive
+28-Sep-23 19:09:49 - Soldier 2:is alive
+28-Sep-23 19:09:49 - Soldier 3:is alive
+28-Sep-23 19:09:49 - Soldier 4:is alive
+28-Sep-23 19:09:49 - Soldier 5:is alive
+28-Sep-23 19:09:49 - Soldier 6:is dead
+28-Sep-23 19:09:49 - Soldier 7:is alive
+28-Sep-23 19:09:49 - Soldier 8:is alive
+28-Sep-23 19:09:49 - Soldier 9:is alive
+28-Sep-23 19:09:49 - Soldier 10:is alive
+28-Sep-23 19:09:49 - Soldier 11:is alive
+28-Sep-23 19:09:49 - Soldier 12:is alive
+28-Sep-23 19:09:49 - Soldier 13:is alive
+28-Sep-23 19:09:49 - Number of alive soldiers are : 12
+28-Sep-23 19:09:49 - **************Missile launching at time 40*****************
+28-Sep-23 19:09:50 - missile position is : 13,6 missile radius : 2
+28-Sep-23 19:09:53 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:09:53 - Soldier 1:is alive
+28-Sep-23 19:09:53 - Soldier 2:is alive
+28-Sep-23 19:09:53 - Soldier 3:is alive
+28-Sep-23 19:09:53 - Soldier 4:is alive
+28-Sep-23 19:09:53 - Soldier 5:is alive
+28-Sep-23 19:09:53 - Soldier 7:is alive
+28-Sep-23 19:09:53 - Soldier 8:is alive
+28-Sep-23 19:09:53 - Soldier 9:is alive
+28-Sep-23 19:09:53 - Soldier 10:is alive
+28-Sep-23 19:09:53 - Soldier 11:is alive
+28-Sep-23 19:09:53 - Soldier 12:is alive
+28-Sep-23 19:09:53 - Soldier 13:is alive
+28-Sep-23 19:09:53 - Number of alive soldiers are : 12
+28-Sep-23 19:09:53 - **************Missile launching at time 50*****************
+28-Sep-23 19:09:53 - missile position is : 5,7 missile radius : 1
+28-Sep-23 19:09:56 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:09:56 - Soldier 1:is alive
+28-Sep-23 19:09:56 - Soldier 2:is alive
+28-Sep-23 19:09:56 - Soldier 3:is alive
+28-Sep-23 19:09:56 - Soldier 4:is alive
+28-Sep-23 19:09:56 - Soldier 5:is alive
+28-Sep-23 19:09:56 - Soldier 7:is alive
+28-Sep-23 19:09:56 - Soldier 8:is alive
+28-Sep-23 19:09:56 - Soldier 9:is alive
+28-Sep-23 19:09:56 - Soldier 10:is alive
+28-Sep-23 19:09:56 - Soldier 11:is alive
+28-Sep-23 19:09:56 - Soldier 12:is alive
+28-Sep-23 19:09:56 - Soldier 13:is alive
+28-Sep-23 19:09:56 - Number of alive soldiers are : 12
+28-Sep-23 19:09:56 - **************Missile launching at time 60*****************
+28-Sep-23 19:09:56 - missile position is : 8,12 missile radius : 4
+28-Sep-23 19:09:58 - Soldier7got saved and moved to new position:(3,5)
+28-Sep-23 19:09:58 - Soldier10got saved and moved to new position:(10,8)
+28-Sep-23 19:09:58 - Soldier12got saved and moved to new position:(4,8)
+28-Sep-23 19:09:59 - Status of soldiers after current missile attack-------------
+28-Sep-23 19:09:59 - Soldier 1:is alive
+28-Sep-23 19:09:59 - Soldier 2:is alive
+28-Sep-23 19:09:59 - Soldier 3:is alive
+28-Sep-23 19:09:59 - Soldier 4:is alive
+28-Sep-23 19:09:59 - Soldier 5:is alive
+28-Sep-23 19:09:59 - Soldier 7:is alive
+28-Sep-23 19:09:59 - Soldier 8:is alive
+28-Sep-23 19:09:59 - Soldier 9:is alive
+28-Sep-23 19:09:59 - Soldier 10:is alive
+28-Sep-23 19:09:59 - Soldier 11:is alive
+28-Sep-23 19:09:59 - Soldier 12:is alive
+28-Sep-23 19:09:59 - Soldier 13:is dead
+28-Sep-23 19:09:59 - Number of alive soldiers are : 11
+28-Sep-23 19:09:59 - ###################  War won  ###################
+28-Sep-23 20:08:51 - $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  STARTING THE GAME  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+28-Sep-23 20:08:51 - Soldier 1,Position-(1,9),speed:4,status:1
+28-Sep-23 20:08:51 - Soldier 2,Position-(3,1),speed:0,status:1
+28-Sep-23 20:08:51 - Soldier 3,Position-(2,9),speed:3,status:1
+28-Sep-23 20:08:51 - Soldier 4,Position-(9,8),speed:1,status:1
+28-Sep-23 20:08:51 - Soldier 5,Position-(8,8),speed:1,status:1
+28-Sep-23 20:08:51 - Soldier 6,Position-(6,2),speed:1,status:1
+28-Sep-23 20:08:51 - Soldier 7,Position-(6,0),speed:0,status:1
+28-Sep-23 20:08:51 - Soldier 8,Position-(0,3),speed:2,status:1
+28-Sep-23 20:08:51 - Soldier 9,Position-(1,6),speed:4,status:1
+28-Sep-23 20:08:51 - Soldier 10,Position-(3,6),speed:4,status:1
+28-Sep-23 20:08:51 - Commander is soldier : 6
+28-Sep-23 20:08:51 - **************Missile launching at time 0*****************
+28-Sep-23 20:08:51 - missile position is : 8,4 missile radius : 3
+28-Sep-23 20:08:54 - Soldier6got saved and moved to new position:(5,1)
+28-Sep-23 20:08:54 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:08:54 - Soldier 1:is alive
+28-Sep-23 20:08:54 - Soldier 2:is alive
+28-Sep-23 20:08:54 - Soldier 3:is alive
+28-Sep-23 20:08:54 - Soldier 4:is alive
+28-Sep-23 20:08:54 - Soldier 5:is alive
+28-Sep-23 20:08:54 - Soldier 6:is alive
+28-Sep-23 20:08:54 - Soldier 7:is alive
+28-Sep-23 20:08:54 - Soldier 8:is alive
+28-Sep-23 20:08:54 - Soldier 9:is alive
+28-Sep-23 20:08:54 - Soldier 10:is alive
+28-Sep-23 20:08:54 - Number of alive soldiers are : 10
+28-Sep-23 20:08:54 - **************Missile launching at time 10*****************
+28-Sep-23 20:08:54 - missile position is : 1,8 missile radius : 2
+28-Sep-23 20:08:55 - Soldier1got saved and moved to new position:(0,5)
+28-Sep-23 20:08:55 - Soldier3got saved and moved to new position:(0,6)
+28-Sep-23 20:08:56 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:08:56 - Soldier 1:is alive
+28-Sep-23 20:08:56 - Soldier 2:is alive
+28-Sep-23 20:08:56 - Soldier 3:is alive
+28-Sep-23 20:08:56 - Soldier 4:is alive
+28-Sep-23 20:08:56 - Soldier 5:is alive
+28-Sep-23 20:08:56 - Soldier 6:is alive
+28-Sep-23 20:08:56 - Soldier 7:is alive
+28-Sep-23 20:08:56 - Soldier 8:is alive
+28-Sep-23 20:08:56 - Soldier 9:is alive
+28-Sep-23 20:08:56 - Soldier 10:is alive
+28-Sep-23 20:08:56 - Number of alive soldiers are : 10
+28-Sep-23 20:08:56 - **************Missile launching at time 20*****************
+28-Sep-23 20:08:56 - missile position is : 2,5 missile radius : 2
+28-Sep-23 20:08:56 - Soldier9got saved and moved to new position:(0,2)
+28-Sep-23 20:08:56 - Soldier10got saved and moved to new position:(0,4)
+28-Sep-23 20:08:57 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:08:57 - Soldier 1:is alive
+28-Sep-23 20:08:57 - Soldier 2:is alive
+28-Sep-23 20:08:57 - Soldier 3:is alive
+28-Sep-23 20:08:57 - Soldier 4:is alive
+28-Sep-23 20:08:57 - Soldier 5:is alive
+28-Sep-23 20:08:57 - Soldier 6:is alive
+28-Sep-23 20:08:57 - Soldier 7:is alive
+28-Sep-23 20:08:57 - Soldier 8:is alive
+28-Sep-23 20:08:57 - Soldier 9:is alive
+28-Sep-23 20:08:57 - Soldier 10:is alive
+28-Sep-23 20:08:57 - Number of alive soldiers are : 10
+28-Sep-23 20:08:57 - **************Missile launching at time 30*****************
+28-Sep-23 20:08:57 - missile position is : 5,7 missile radius : 4
+28-Sep-23 20:08:57 - Soldier5got saved and moved to new position:(9,7)
+28-Sep-23 20:08:57 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:08:57 - Soldier 1:is alive
+28-Sep-23 20:08:57 - Soldier 2:is alive
+28-Sep-23 20:08:57 - Soldier 3:is alive
+28-Sep-23 20:08:57 - Soldier 4:is alive
+28-Sep-23 20:08:57 - Soldier 5:is alive
+28-Sep-23 20:08:57 - Soldier 6:is alive
+28-Sep-23 20:08:57 - Soldier 7:is alive
+28-Sep-23 20:08:57 - Soldier 8:is alive
+28-Sep-23 20:08:57 - Soldier 9:is alive
+28-Sep-23 20:08:57 - Soldier 10:is alive
+28-Sep-23 20:08:57 - Number of alive soldiers are : 10
+28-Sep-23 20:08:57 - **************Missile launching at time 40*****************
+28-Sep-23 20:08:57 - missile position is : 1,1 missile radius : 4
+28-Sep-23 20:08:57 - Soldier8got saved and moved to new position:(1,5)
+28-Sep-23 20:08:57 - Soldier9got saved and moved to new position:(1,6)
+28-Sep-23 20:08:57 - Soldier10got saved and moved to new position:(0,7)
+28-Sep-23 20:08:58 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:08:58 - Soldier 1:is alive
+28-Sep-23 20:08:58 - Soldier 2:is dead
+28-Sep-23 20:08:58 - Soldier 3:is alive
+28-Sep-23 20:08:58 - Soldier 4:is alive
+28-Sep-23 20:08:58 - Soldier 5:is alive
+28-Sep-23 20:08:58 - Soldier 6:is alive
+28-Sep-23 20:08:58 - Soldier 7:is alive
+28-Sep-23 20:08:58 - Soldier 8:is alive
+28-Sep-23 20:08:58 - Soldier 9:is alive
+28-Sep-23 20:08:58 - Soldier 10:is alive
+28-Sep-23 20:08:58 - Number of alive soldiers are : 9
+28-Sep-23 20:08:58 - **************Missile launching at time 50*****************
+28-Sep-23 20:08:58 - missile position is : 3,4 missile radius : 2
+28-Sep-23 20:08:58 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:08:58 - Soldier 1:is alive
+28-Sep-23 20:08:58 - Soldier 3:is alive
+28-Sep-23 20:08:58 - Soldier 4:is alive
+28-Sep-23 20:08:58 - Soldier 5:is alive
+28-Sep-23 20:08:58 - Soldier 6:is alive
+28-Sep-23 20:08:58 - Soldier 7:is alive
+28-Sep-23 20:08:58 - Soldier 8:is alive
+28-Sep-23 20:08:58 - Soldier 9:is alive
+28-Sep-23 20:08:58 - Soldier 10:is alive
+28-Sep-23 20:08:58 - Number of alive soldiers are : 9
+28-Sep-23 20:08:58 - **************Missile launching at time 60*****************
+28-Sep-23 20:08:58 - missile position is : 0,7 missile radius : 2
+28-Sep-23 20:08:58 - Soldier3got saved and moved to new position:(0,3)
+28-Sep-23 20:08:58 - Soldier9got saved and moved to new position:(0,2)
+28-Sep-23 20:08:58 - Soldier10got saved and moved to new position:(0,4)
+28-Sep-23 20:08:59 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:08:59 - Soldier 1:is alive
+28-Sep-23 20:08:59 - Soldier 3:is alive
+28-Sep-23 20:08:59 - Soldier 4:is alive
+28-Sep-23 20:08:59 - Soldier 5:is alive
+28-Sep-23 20:08:59 - Soldier 6:is alive
+28-Sep-23 20:08:59 - Soldier 7:is alive
+28-Sep-23 20:08:59 - Soldier 8:is alive
+28-Sep-23 20:08:59 - Soldier 9:is alive
+28-Sep-23 20:08:59 - Soldier 10:is alive
+28-Sep-23 20:08:59 - Number of alive soldiers are : 9
+28-Sep-23 20:08:59 - **************Missile launching at time 70*****************
+28-Sep-23 20:08:59 - missile position is : 3,8 missile radius : 2
+28-Sep-23 20:09:00 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:09:00 - Soldier 1:is alive
+28-Sep-23 20:09:00 - Soldier 3:is alive
+28-Sep-23 20:09:00 - Soldier 4:is alive
+28-Sep-23 20:09:00 - Soldier 5:is alive
+28-Sep-23 20:09:00 - Soldier 6:is alive
+28-Sep-23 20:09:00 - Soldier 7:is alive
+28-Sep-23 20:09:00 - Soldier 8:is alive
+28-Sep-23 20:09:00 - Soldier 9:is alive
+28-Sep-23 20:09:00 - Soldier 10:is alive
+28-Sep-23 20:09:00 - Number of alive soldiers are : 9
+28-Sep-23 20:09:00 - **************Missile launching at time 80*****************
+28-Sep-23 20:09:00 - missile position is : 7,4 missile radius : 4
+28-Sep-23 20:09:00 - Soldier6got saved and moved to new position:(4,0)
+28-Sep-23 20:09:00 - Soldier5got saved and moved to new position:(8,8)
+28-Sep-23 20:09:00 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:09:00 - Soldier 1:is alive
+28-Sep-23 20:09:00 - Soldier 3:is alive
+28-Sep-23 20:09:00 - Soldier 4:is alive
+28-Sep-23 20:09:00 - Soldier 5:is alive
+28-Sep-23 20:09:00 - Soldier 6:is alive
+28-Sep-23 20:09:00 - Soldier 7:is alive
+28-Sep-23 20:09:00 - Soldier 8:is alive
+28-Sep-23 20:09:00 - Soldier 9:is alive
+28-Sep-23 20:09:00 - Soldier 10:is alive
+28-Sep-23 20:09:00 - Number of alive soldiers are : 9
+28-Sep-23 20:09:00 - **************Missile launching at time 90*****************
+28-Sep-23 20:09:00 - missile position is : 1,7 missile radius : 1
+28-Sep-23 20:09:01 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:09:01 - Soldier 1:is alive
+28-Sep-23 20:09:01 - Soldier 3:is alive
+28-Sep-23 20:09:01 - Soldier 4:is alive
+28-Sep-23 20:09:01 - Soldier 5:is alive
+28-Sep-23 20:09:01 - Soldier 6:is alive
+28-Sep-23 20:09:01 - Soldier 7:is alive
+28-Sep-23 20:09:01 - Soldier 8:is alive
+28-Sep-23 20:09:01 - Soldier 9:is alive
+28-Sep-23 20:09:01 - Soldier 10:is alive
+28-Sep-23 20:09:01 - Number of alive soldiers are : 9
+28-Sep-23 20:09:01 - **************Missile launching at time 100*****************
+28-Sep-23 20:09:01 - missile position is : 4,9 missile radius : 1
+28-Sep-23 20:09:01 - Status of soldiers after current missile attack-------------
+28-Sep-23 20:09:01 - Soldier 1:is alive
+28-Sep-23 20:09:01 - Soldier 3:is alive
+28-Sep-23 20:09:01 - Soldier 4:is alive
+28-Sep-23 20:09:01 - Soldier 5:is alive
+28-Sep-23 20:09:01 - Soldier 6:is alive
+28-Sep-23 20:09:01 - Soldier 7:is alive
+28-Sep-23 20:09:01 - Soldier 8:is alive
+28-Sep-23 20:09:01 - Soldier 9:is alive
+28-Sep-23 20:09:01 - Soldier 10:is alive
+28-Sep-23 20:09:01 - Number of alive soldiers are : 9
+28-Sep-23 20:09:01 - ###################  War won  ###################
