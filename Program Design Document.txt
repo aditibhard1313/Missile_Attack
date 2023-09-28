@@ -1,0 +1,640 @@
+# Program Design Document
+
+## Title: Missile Defense Game
+
+### 1. Introduction
+This program is designed to simulate a missile defense game where a commander and soldiers coordinate to defend against incoming missiles. The game is implemented in Python using gRPC for communication, and it involves multiple threads and visualization using matplotlib.
+
+### 2. Program Overview
+The program consists of several key components:
+- gRPC communication with a remote server to obtain missile information.
+- Commander and soldier threads that execute various tasks.
+- Visualization of the game grid, soldiers, and missiles using matplotlib.
+- Logging of game events to a log file.
+
+### 3. How the Program Works
+#### 3.1. Initialization
+- The program initializes the game by setting the total time (T) and current time (t).
+- It imports necessary libraries, including 'grpc', 'missile_attack_pb2', 'missile_attack_pb2_grpc', and others.
+- It sets up logging to record game events in a log file.
+
+#### 3.2. Soldier Class
+- The 'soldier' class represents individual soldiers in the game, with attributes such as ID, position ('x', 'y'), speed, and status (alive or dead).
+
+#### 3.3. Game Initialization
+- The program starts by creating a list of 10 soldiers with random positions and attributes.
+- The initial positions are chosen to avoid overlap and are stored in the 'used_coordinates' set to track occupied positions.
+- The game grid and soldiers' positions are visualized using matplotlib.
+
+#### 3.4. Threaded Execution
+- The main game logic is executed in multiple threads:
+  - The 'run_client' function is the entry point of the program, running the game.
+  - The 'run_commander' function represents the commander's actions.
+  - The 'run_soldier' function represents each soldier's actions.
+- Threads are used to simulate concurrent execution of soldiers and the commander.
+
+#### 3.5. Missiles and Communication
+- The game communicates with a remote server using gRPC to obtain missile information (position and radius).
+- The missile coordinates are used to determine the threat area (red zone) on the game grid.
+- The game grid is updated to display the missile's position.
+
+#### 3.6. Soldier Actions
+- Soldiers evaluate their positions and move to safer locations to avoid being in the red zone.
+- If a soldier cannot escape the red zone, they are marked as dead, removed from the list, and logged.
+- Soldiers take shelter by analyzing possible move options within their speed limit.
+
+#### 3.7. Commander Actions
+- The commander selects a soldier from the list to take action.
+- The commander coordinates with the selected soldier to determine their actions.
+- The commander's actions are executed in a separate thread.
+
+#### 3.8. Game Progression
+- The game progresses in iterations with a time interval t.
+- The commander may change if the previous commander dies.
+- The number of alive soldiers is logged at each iteration.
+
+#### 3.9. Game Termination
+- At the end of game if:
+  - Fewer than or equal to 5 soldiers are alive (war is lost).
+  - More than 5 soldiers  alive (war is won).
+- The final outcome is logged.
+
+### 4. Design Tradeoffs
+- The program uses multiple threads for concurrent execution, which can improve performance but may introduce complexity and synchronization challenges.
+- The use of global variables, while convenient, can make the code harder to maintain and test.
+- Visualization is done using matplotlib, which provides a graphical representation of the game grid but may impact performance for larger grids.
+
+### 5. How to Run the Program
+
+#### 5.1 Environment Setup:
+   - Ensure that you have Python installed on your system.
+ 
+#### 5.2 Install Required Libraries:
+   - This code relies on several Python libraries, including 'grpc', 'matplotlib'. You can install them using pip by running the following commands:
+     python -m pip install grpcio
+     python -m pip install grpcio-tools
+     pip install matplotlib 
+    
+#### 5.3 Protocol Buffers Compilation:
+   - The code uses Protocol Buffers for gRPC communication. You need to compile the `missile_attack.proto` file to generate the necessary Python code.      
+     Navigate to the directory containing the `missile_attack.proto` file and run the following command:   
+     python -m grpc_tools.protoc -I . --python_out=. --grpc_python_out=. missile_attack.proto
+   - This will generate 2 files :
+     missile_attack_pb2_grpc.py 
+     missile_attack_pb2.py 
+
+#### 5.4 Running the Game:
+   - To start the Missile Defense Game : 
+    
+     First at one computer, run the server using the following command (Make sure to enter server's system IP in the missile_attack_server.py at line 23):
+     python missile_attack_server.py
+
+     Now, at second computer, run the client using the following command (Make sure to enter server's system IP in the missile_attack_client.py at line               
+     242):
+     python missile_attack_client.py
+     After running above command it will ask for inputs on terminal, give all the inputs.
+ 
+     Note: Make sure first to run server then client.
+	5.4.1. Ensure you have the required libraries installed, including grpc, matplotlib, and others.
+	5.4.2. Make sure both the computers are connected to same wifi.
+	5.4.3. Make sure the remote server and client have same ip address(of the server) in their code. 
+	5.4.4. Monitor the game progress in the console.At each iteration, when the grid appears it will first show the pre missile attack snapshot of 		missile and soldiers and after closing the grid window it will show post missile attack snapshot.
+	5.4.5. Game events are logged to a file named `mylog.log`.
+
+### 6. Conclusion
+The Missile Defense Game is a simulation of missile defense coordination using Python, gRPC, and matplotlib. It demonstrates the coordination of soldiers and a commander to defend against incoming missiles and provides a visual representation of the game grid.
+
+By following the steps outlined in the "How to Run the Program" section, you can execute the game and observe the outcome.
+
+### 7. Github repository url
+	https://github.com/aditibhard1313/Missile_Attack.git
+
+-----------------------------------------------------------------------TEST CASES---------------------------------------------------------------------------
+
+
+---------TEST CASE-1------------
+PS C:\AOS> python missile_attack_client.py
+Enter the following values : 
+Number of soldiers : 10
+Size of grid : 10
+Total time of game : 100
+Duration of each attack : 10
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  STARTING THE GAME  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Soldier ID 1 :Position( 2 , 8 ),speed : 0 status: 1
+Soldier ID 2 :Position( 9 , 3 ),speed : 1 status: 1
+Soldier ID 3 :Position( 2 , 6 ),speed : 4 status: 1
+Soldier ID 4 :Position( 1 , 0 ),speed : 0 status: 1
+Soldier ID 5 :Position( 2 , 7 ),speed : 0 status: 1
+Soldier ID 6 :Position( 0 , 8 ),speed : 4 status: 1
+Soldier ID 7 :Position( 8 , 5 ),speed : 3 status: 1
+Soldier ID 8 :Position( 2 , 3 ),speed : 0 status: 1
+Soldier ID 9 :Position( 6 , 7 ),speed : 0 status: 1
+Soldier ID 10 :Position( 5 , 6 ),speed : 3 status: 1
+*********************************Missile launching at time=  0 ******************************
+missile position is : ( 6 , 7 ), missile radius :  2
+printing all coordinates covered by missile
+Missile coordinates: (5, 6), (5, 7), (5, 8), (6, 6), (6, 7), (6, 8), (7, 6), (7, 7), (7, 8)
+commander is s 9
+soldier 9 coordinates:( 6 7 )
+Soldier 9 possible moves according to its speed: (6, 7)
+soldier 1 coordinates:( 2 8 )
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 2 6 )
+soldier 4 coordinates:( 1 0 )
+soldier 5 coordinates:( 2 7 )
+soldier 6 coordinates:( 0 8 )
+soldier 7 coordinates:( 8 5 )
+soldier 8 coordinates:( 2 3 )
+soldier 10 coordinates:( 5 6 )
+Soldier 10 possible moves according to its speed: (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9), (4, 3), (4, 4), (4, 5), (4, 6), (4, 7), (4, 8), (4, 9), (5, 3), (5, 4), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (6, 3), (6, 4), (6, 5), (6, 6), (6, 7), (6, 8), (6, 9), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8), (7, 9), (8, 3), (8, 4), (8, 5), (8, 6), (8, 7), (8, 8), (8, 9)
+Soldier  10 finally moved to:( 2 , 4 ) and is safe
+Commander died so Newly elected commander is soldier  5
+Status of soldiers after current missile attack-------------
+Soldier  1 is alive
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  5 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  9 is dead
+Soldier  10 is alive
+Number of alive soldiers are :  9
+*********************************Missile launching at time=  10 ******************************
+missile position is : ( 0 , 6 ), missile radius :  3
+printing all coordinates covered by missile
+Missile coordinates: (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8)
+commander is s 5
+soldier 5 coordinates:( 2 7 )
+Soldier 5 possible moves according to its speed: (2, 7)
+soldier 1 coordinates:( 2 8 )
+Soldier 1 possible moves according to its speed: (2, 8)
+soldier 2 coordinates:( 9 3 )
+soldier 4 coordinates:( 1 0 )
+soldier 6 coordinates:( 0 8 )
+Soldier 6 possible moves according to its speed: (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9), (4, 4), (4, 5), (4, 6), (4, 7), (4, 8), (4, 9)
+Soldier  6 finally moved to:( 0 , 9 ) and is safe
+soldier 7 coordinates:( 8 5 )
+soldier 8 coordinates:( 2 3 )
+soldier 10 coordinates:( 2 4 )
+Soldier 10 possible moves according to its speed: (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), (4, 7), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (5, 7)
+Soldier  10 finally moved to:( 0 , 1 ) and is safe
+Commander died so Newly elected commander is soldier  10
+Status of soldiers after current missile attack-------------
+Soldier  1 is dead
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  5 is dead
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  10 is alive
+Number of alive soldiers are :  7
+*********************************Missile launching at time=  20 ******************************
+missile position is : ( 0 , 2 ), missile radius :  2
+printing all coordinates covered by missile
+Missile coordinates: (0, 1), (0, 2), (0, 3), (1, 1), (1, 2), (1, 3)
+commander is s 10
+soldier 10 coordinates:( 0 1 )
+Soldier 10 possible moves according to its speed: (0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4)
+Soldier  10 finally moved to:( 0 , 0 ) and is safe
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 2 6 )
+soldier 4 coordinates:( 1 0 )
+soldier 6 coordinates:( 0 9 )
+soldier 7 coordinates:( 8 5 )
+soldier 8 coordinates:( 2 3 )
+Status of soldiers after current missile attack-------------
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  10 is alive
+Number of alive soldiers are :  7
+*********************************Missile launching at time=  30 ******************************
+missile position is : ( 8 , 6 ), missile radius :  1
+printing all coordinates covered by missile
+Missile coordinates: (8, 6)
+commander is s 10
+soldier 10 coordinates:( 0 0 )
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 2 6 )
+soldier 4 coordinates:( 1 0 )
+soldier 6 coordinates:( 0 9 )
+soldier 7 coordinates:( 8 5 )
+soldier 8 coordinates:( 2 3 )
+Status of soldiers after current missile attack-------------
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  10 is alive
+Number of alive soldiers are :  7
+*********************************Missile launching at time=  40 ******************************
+missile position is : ( 0 , 9 ), missile radius :  4
+printing all coordinates covered by missile
+Missile coordinates: (0, 6), (0, 7), (0, 8), (0, 9), (1, 6), (1, 7), (1, 8), (1, 9), (2, 6), (2, 7), (2, 8), (2, 9), (3, 6), (3, 7), (3, 8), (3, 9)
+commander is s 10
+soldier 10 coordinates:( 0 0 )
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 2 6 )
+Soldier 3 possible moves according to its speed: (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), (4, 7), (4, 8), (4, 9), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6), (6, 7), (6, 8), (6, 9)
+Soldier  3 finally moved to:( 0 , 2 ) and is safe
+soldier 4 coordinates:( 1 0 )
+soldier 6 coordinates:( 0 9 )
+Soldier 6 possible moves according to its speed: (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9), (4, 5), (4, 6), (4, 7), (4, 8), (4, 9)
+Soldier  6 finally moved to:( 0 , 5 ) and is safe
+soldier 7 coordinates:( 8 5 )
+soldier 8 coordinates:( 2 3 )
+Status of soldiers after current missile attack-------------
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  10 is alive
+Number of alive soldiers are :  7
+*********************************Missile launching at time=  50 ******************************
+missile position is : ( 1 , 3 ), missile radius :  1
+printing all coordinates covered by missile
+Missile coordinates: (1, 3)
+commander is s 10
+soldier 10 coordinates:( 0 0 )
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 0 2 )
+soldier 4 coordinates:( 1 0 )
+soldier 6 coordinates:( 0 5 )
+soldier 7 coordinates:( 8 5 )
+soldier 8 coordinates:( 2 3 )
+Status of soldiers after current missile attack-------------
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  10 is alive
+Number of alive soldiers are :  7
+*********************************Missile launching at time=  60 ******************************
+missile position is : ( 3 , 3 ), missile radius :  3
+printing all coordinates covered by missile
+Missile coordinates: (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5)
+commander is s 10
+soldier 10 coordinates:( 0 0 )
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 0 2 )
+soldier 4 coordinates:( 1 0 )
+soldier 6 coordinates:( 0 5 )
+soldier 7 coordinates:( 8 5 )
+soldier 8 coordinates:( 2 3 )
+Soldier 8 possible moves according to its speed: (2, 3)
+Status of soldiers after current missile attack-------------
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is dead
+Soldier  10 is alive
+Number of alive soldiers are :  6
+*********************************Missile launching at time=  70 ******************************
+missile position is : ( 1 , 2 ), missile radius :  3
+printing all coordinates covered by missile
+Missile coordinates: (0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4)
+commander is s 10
+soldier 10 coordinates:( 0 0 )
+Soldier 10 possible moves according to its speed: (0, 0), (0, 1), (0, 2), (0, 3), (1, 0), (1, 1), (1, 2), (1, 3), (2, 0), (2, 1), (2, 2), (2, 3), (3, 0), (3, 1), (3, 2), (3, 3)
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 0 2 )
+Soldier 3 possible moves according to its speed: (0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6)
+Soldier  3 finally moved to:( 0 , 6 ) and is safe
+soldier 4 coordinates:( 1 0 )
+Soldier 4 possible moves according to its speed: (1, 0)
+soldier 6 coordinates:( 0 5 )
+soldier 7 coordinates:( 8 5 )
+Commander died so Newly elected commander is soldier  7
+Status of soldiers after current missile attack-------------
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is dead
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  10 is dead
+Number of alive soldiers are :  4
+*********************************Missile launching at time=  80 ******************************
+missile position is : ( 8 , 1 ), missile radius :  2
+printing all coordinates covered by missile
+Missile coordinates: (7, 0), (7, 1), (7, 2), (8, 0), (8, 1), (8, 2), (9, 0), (9, 1), (9, 2)
+commander is s 7
+soldier 7 coordinates:( 8 5 )
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 0 6 )
+soldier 6 coordinates:( 0 5 )
+Status of soldiers after current missile attack-------------
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Number of alive soldiers are :  4
+*********************************Missile launching at time=  90 ******************************
+missile position is : ( 4 , 4 ), missile radius :  4
+printing all coordinates covered by missile
+Missile coordinates: (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), (4, 7), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (5, 7), (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6), (6, 7), (7, 1), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7)
+commander is s 7
+soldier 7 coordinates:( 8 5 )
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 0 6 )
+soldier 6 coordinates:( 0 5 )
+Status of soldiers after current missile attack-------------
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Number of alive soldiers are :  4
+*********************************Missile launching at time=  100 ******************************
+missile position is : ( 4 , 5 ), missile radius :  4
+printing all coordinates covered by missile
+Missile coordinates: (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), (4, 7), (4, 8), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (5, 7), (5, 8), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6), (6, 7), (6, 8), (7, 2), (7, 3), (7, 4), (7, 5), (7, 6), (7, 7), (7, 8)
+commander is s 7
+soldier 7 coordinates:( 8 5 )
+soldier 2 coordinates:( 9 3 )
+soldier 3 coordinates:( 0 6 )
+soldier 6 coordinates:( 0 5 )
+Status of soldiers after current missile attack-------------
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Number of alive soldiers are :  4
+###################  War lost  ##################
+
+
+
+
+
+
+---------------TEST CASE-2--------------
+PS C:\AOS> python missile_attack_client.py
+Enter the following values : 
+Number of soldiers : 13
+Size of grid : 15
+Total time of game : 60
+Duration of each attack : 10
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  STARTING THE GAME  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Soldier ID 1 :Position( 4 , 1 ),speed : 2 status: 1
+Soldier ID 2 :Position( 5 , 4 ),speed : 1 status: 1
+Soldier ID 3 :Position( 3 , 12 ),speed : 2 status: 1
+Soldier ID 4 :Position( 14 , 3 ),speed : 4 status: 1
+Soldier ID 5 :Position( 9 , 3 ),speed : 0 status: 1
+Soldier ID 6 :Position( 12 , 0 ),speed : 0 status: 1
+Soldier ID 7 :Position( 7 , 9 ),speed : 4 status: 1
+Soldier ID 8 :Position( 3 , 0 ),speed : 2 status: 1
+Soldier ID 9 :Position( 12 , 9 ),speed : 4 status: 1
+Soldier ID 10 :Position( 11 , 9 ),speed : 1 status: 1
+Soldier ID 11 :Position( 1 , 5 ),speed : 0 status: 1
+Soldier ID 12 :Position( 6 , 10 ),speed : 2 status: 1
+Soldier ID 13 :Position( 9 , 13 ),speed : 0 status: 1
+*********************************Missile launching at time=  0 ******************************
+missile position is : ( 9 , 9 ), missile radius :  2
+printing all coordinates covered by missile
+Missile coordinates: (8, 8), (8, 9), (8, 10), (9, 8), (9, 9), (9, 10), (10, 8), (10, 9), (10, 10)
+commander is s 4
+soldier 4 coordinates:( 14 3 )
+soldier 1 coordinates:( 4 1 )
+soldier 2 coordinates:( 5 4 )
+soldier 3 coordinates:( 3 12 )
+soldier 5 coordinates:( 9 3 )
+soldier 6 coordinates:( 12 0 )
+soldier 7 coordinates:( 7 9 )
+soldier 8 coordinates:( 3 0 )
+soldier 9 coordinates:( 12 9 )
+soldier 10 coordinates:( 11 9 )
+soldier 11 coordinates:( 1 5 )
+soldier 12 coordinates:( 6 10 )
+soldier 13 coordinates:( 9 13 )
+Status of soldiers after current missile attack-------------
+Soldier  1 is alive
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  5 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  9 is alive
+Soldier  10 is alive
+Soldier  11 is alive
+Soldier  12 is alive
+Soldier  13 is alive
+Number of alive soldiers are :  13
+*********************************Missile launching at time=  10 ******************************
+missile position is : ( 4 , 9 ), missile radius :  2
+printing all coordinates covered by missile
+Missile coordinates: (3, 8), (3, 9), (3, 10), (4, 8), (4, 9), (4, 10), (5, 8), (5, 9), (5, 10)
+commander is s 4
+soldier 4 coordinates:( 14 3 )
+soldier 1 coordinates:( 4 1 )
+soldier 2 coordinates:( 5 4 )
+soldier 3 coordinates:( 3 12 )
+soldier 5 coordinates:( 9 3 )
+soldier 6 coordinates:( 12 0 )
+soldier 7 coordinates:( 7 9 )
+soldier 8 coordinates:( 3 0 )
+soldier 9 coordinates:( 12 9 )
+soldier 10 coordinates:( 11 9 )
+soldier 11 coordinates:( 1 5 )
+soldier 12 coordinates:( 6 10 )
+soldier 13 coordinates:( 9 13 )
+Status of soldiers after current missile attack-------------
+Soldier  1 is alive
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  5 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  9 is alive
+Soldier  10 is alive
+Soldier  11 is alive
+Soldier  12 is alive
+Soldier  13 is alive
+Number of alive soldiers are :  13
+*********************************Missile launching at time=  20 ******************************
+missile position is : ( 2 , 0 ), missile radius :  2
+printing all coordinates covered by missile
+Missile coordinates: (1, 0), (1, 1), (2, 0), (2, 1), (3, 0), (3, 1)
+commander is s 4
+soldier 4 coordinates:( 14 3 )
+soldier 1 coordinates:( 4 1 )
+soldier 2 coordinates:( 5 4 )
+soldier 3 coordinates:( 3 12 )
+soldier 5 coordinates:( 9 3 )
+soldier 6 coordinates:( 12 0 )
+soldier 7 coordinates:( 7 9 )
+soldier 8 coordinates:( 3 0 )
+Soldier 8 possible moves according to its speed: (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2), (3, 0), (3, 1), (3, 2), (4, 0), (4, 1), (4, 2), (5, 0), (5, 1), (5, 2)
+Soldier  8 finally moved to:( 1 , 2 ) and is safe
+soldier 9 coordinates:( 12 9 )
+soldier 10 coordinates:( 11 9 )
+soldier 11 coordinates:( 1 5 )
+soldier 12 coordinates:( 6 10 )
+soldier 13 coordinates:( 9 13 )
+Status of soldiers after current missile attack-------------
+Soldier  1 is alive
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  5 is alive
+Soldier  6 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  9 is alive
+Soldier  10 is alive
+Soldier  11 is alive
+Soldier  12 is alive
+Soldier  13 is alive
+Number of alive soldiers are :  13
+*********************************Missile launching at time=  30 ******************************
+missile position is : ( 13 , 3 ), missile radius :  4
+printing all coordinates covered by missile
+Missile coordinates: (10, 0), (10, 1), (10, 2), (10, 3), (10, 4), (10, 5), (10, 6), (11, 0), (11, 1), (11, 2), (11, 3), (11, 4), (11, 5), (11, 6), (12, 0), (12, 1), (12, 2), (12, 3), (12, 4), (12, 5), (12, 6), (13, 0), (13, 1), (13, 2), (13, 3), (13, 4), (13, 5), (13, 6), (14, 0), (14, 1), (14, 2), (14, 3), (14, 4), (14, 5), (14, 6)
+commander is s 4
+soldier 4 coordinates:( 14 3 )
+Soldier 4 possible moves according to its speed: (10, 0), (10, 1), (10, 2), (10, 3), (10, 4), (10, 5), (10, 6), (10, 7), (11, 0), (11, 1), (11, 2), (11, 3), (11, 4), (11, 5), (11, 6), (11, 7), (12, 0), (12, 1), (12, 2), (12, 3), (12, 4), (12, 5), (12, 6), (12, 7), (13, 0), (13, 1), (13, 2), (13, 3), (13, 4), (13, 5), (13, 6), (13, 7), (14, 0), (14, 1), (14, 2), (14, 3), (14, 4), (14, 5), (14, 6), (14, 7)
+Soldier  4 finally moved to:( 10 , 7 ) and is safe
+soldier 1 coordinates:( 4 1 )
+soldier 2 coordinates:( 5 4 )
+soldier 3 coordinates:( 3 12 )
+soldier 5 coordinates:( 9 3 )
+soldier 6 coordinates:( 12 0 )
+Soldier 6 possible moves according to its speed: (12, 0)
+soldier 7 coordinates:( 7 9 )
+soldier 9 coordinates:( 12 9 )
+soldier 10 coordinates:( 11 9 )
+soldier 11 coordinates:( 1 5 )
+soldier 12 coordinates:( 6 10 )
+soldier 13 coordinates:( 9 13 )
+Status of soldiers after current missile attack-------------
+Soldier  1 is alive
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  5 is alive
+Soldier  6 is dead
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  9 is alive
+Soldier  10 is alive
+Soldier  11 is alive
+Soldier  12 is alive
+Soldier  13 is alive
+Number of alive soldiers are :  12
+*********************************Missile launching at time=  40 ******************************
+missile position is : ( 13 , 6 ), missile radius :  2
+printing all coordinates covered by missile
+Missile coordinates: (12, 5), (12, 6), (12, 7), (13, 5), (13, 6), (13, 7), (14, 5), (14, 6), (14, 7)
+commander is s 4
+soldier 4 coordinates:( 10 7 )
+soldier 1 coordinates:( 4 1 )
+soldier 2 coordinates:( 5 4 )
+soldier 3 coordinates:( 3 12 )
+soldier 5 coordinates:( 9 3 )
+soldier 7 coordinates:( 7 9 )
+soldier 8 coordinates:( 1 2 )
+soldier 9 coordinates:( 12 9 )
+soldier 10 coordinates:( 11 9 )
+soldier 11 coordinates:( 1 5 )
+soldier 12 coordinates:( 6 10 )
+soldier 13 coordinates:( 9 13 )
+Status of soldiers after current missile attack-------------
+Soldier  1 is alive
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  5 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  9 is alive
+Soldier  10 is alive
+Soldier  11 is alive
+Soldier  12 is alive
+Soldier  13 is alive
+Number of alive soldiers are :  12
+*********************************Missile launching at time=  50 ******************************
+missile position is : ( 5 , 7 ), missile radius :  1
+printing all coordinates covered by missile
+Missile coordinates: (5, 7)
+commander is s 4
+soldier 4 coordinates:( 10 7 )
+soldier 1 coordinates:( 4 1 )
+soldier 2 coordinates:( 5 4 )
+soldier 3 coordinates:( 3 12 )
+soldier 5 coordinates:( 9 3 )
+soldier 7 coordinates:( 7 9 )
+soldier 8 coordinates:( 1 2 )
+soldier 9 coordinates:( 12 9 )
+soldier 10 coordinates:( 11 9 )
+soldier 11 coordinates:( 1 5 )
+soldier 12 coordinates:( 6 10 )
+soldier 13 coordinates:( 9 13 )
+Status of soldiers after current missile attack-------------
+Soldier  1 is alive
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  5 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  9 is alive
+Soldier  10 is alive
+Soldier  11 is alive
+Soldier  12 is alive
+Soldier  13 is alive
+Number of alive soldiers are :  12
+*********************************Missile launching at time=  60 ******************************
+missile position is : ( 8 , 12 ), missile radius :  4
+printing all coordinates covered by missile
+Missile coordinates: (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (5, 14), (6, 9), (6, 10), (6, 11), (6, 12), (6, 13), (6, 14), (7, 9), (7, 10), (7, 11), (7, 12), (7, 13), (7, 14), (8, 9), (8, 10), (8, 11), (8, 12), (8, 13), (8, 14), (9, 9), (9, 10), (9, 11), (9, 12), (9, 13), (9, 14), (10, 9), (10, 10), (10, 11), (10, 12), (10, 13), (10, 14), (11, 9), (11, 10), (11, 11), (11, 12), (11, 13), (11, 14)
+commander is s 4
+soldier 4 coordinates:( 10 7 )
+soldier 1 coordinates:( 4 1 )
+soldier 2 coordinates:( 5 4 )
+soldier 3 coordinates:( 3 12 )
+soldier 5 coordinates:( 9 3 )
+soldier 7 coordinates:( 7 9 )
+Soldier 7 possible moves according to its speed: (3, 5), (3, 6), (3, 7), (3, 8), (3, 9), (3, 10), (3, 11), (3, 12), (3, 13), (4, 5), (4, 6), (4, 7), (4, 8), (4, 9), (4, 10), (4, 11), (4, 12), (4, 13), (5, 5), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (6, 5), (6, 6), (6, 7), (6, 8), (6, 9), (6, 10), (6, 11), (6, 12), (6, 13), (7, 5), (7, 6), (7, 7), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (7, 13), (8, 5), (8, 6), (8, 7), (8, 8), (8, 9), (8, 10), (8, 11), (8, 12), (8, 13), (9, 5), (9, 6), (9, 7), (9, 8), (9, 9), (9, 10), (9, 11), (9, 12), (9, 13), (10, 5), (10, 6), (10, 7), (10, 8), (10, 9), (10, 10), (10, 11), (10, 12), (10, 13), (11, 5), (11, 6), (11, 7), (11, 8), (11, 9), (11, 10), (11, 11), (11, 12), (11, 13)
+Soldier  7 finally moved to:( 3 , 5 ) and is safe
+soldier 8 coordinates:( 1 2 )
+soldier 9 coordinates:( 12 9 )
+soldier 10 coordinates:( 11 9 )
+Soldier 10 possible moves according to its speed: (10, 8), (10, 9), (10, 10), (11, 8), (11, 9), (11, 10), (12, 8), (12, 9), (12, 10)
+Soldier  10 finally moved to:( 10 , 8 ) and is safe
+soldier 11 coordinates:( 1 5 )
+soldier 12 coordinates:( 6 10 )
+Soldier 12 possible moves according to its speed: (4, 8), (4, 9), (4, 10), (4, 11), (4, 12), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (6, 8), (6, 9), (6, 10), (6, 11), (6, 12), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (8, 8), (8, 9), (8, 10), (8, 11), (8, 12)
+Soldier  12 finally moved to:( 4 , 8 ) and is safe
+soldier 13 coordinates:( 9 13 )
+Soldier 13 possible moves according to its speed: (9, 13)
+Status of soldiers after current missile attack-------------
+Soldier  1 is alive
+Soldier  2 is alive
+Soldier  3 is alive
+Soldier  4 is alive
+Soldier  5 is alive
+Soldier  7 is alive
+Soldier  8 is alive
+Soldier  9 is alive
+Soldier  10 is alive
+Soldier  11 is alive
+Soldier  12 is alive
+Soldier  13 is dead
+Number of alive soldiers are :  11
+###################  War won  ##################
